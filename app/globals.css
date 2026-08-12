@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchor targets so the sticky header doesn't overlap them */
+    scroll-padding-top: 96px;
+  }
+
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+  }
+
+  /* Visible focus states for keyboard users on all interactive elements */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid #221155;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-6;
+  }
+}
