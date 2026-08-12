@@ -1,7 +1,7 @@
 type FooterColumn = {
   heading: string;
   headingColor: string;
-  links: { label: string; href: string }[];
+  links: { label: string; href: string; external?: boolean }[];
 };
 
 const COLUMNS: FooterColumn[] = [
@@ -36,7 +36,7 @@ const COLUMNS: FooterColumn[] = [
     heading: "Tyndale University",
     headingColor: "text-gold",
     links: [
-      { label: "Main Website", href: "#" },
+      { label: "Main Website", href: "https://www.tyndale.ca", external: true },
       { label: "Media & Design (Admin)", href: "#" },
     ],
   },
@@ -70,6 +70,9 @@ export default function SiteFooter() {
                     <a
                       href={link.href}
                       className="text-sm text-white/75 transition-colors hover:text-white hover:underline"
+                      {...(link.external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
                     >
                       {link.label}
                     </a>
