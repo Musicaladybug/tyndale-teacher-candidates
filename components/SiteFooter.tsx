@@ -84,8 +84,8 @@ export default function SiteFooter() {
       <div className="border-t border-white/15">
         <div className="container-content flex flex-col gap-2 py-6 text-xs text-white/60 tc:flex-row tc:items-center tc:justify-between">
           <p>
-            © 2026 Tyndale University, School of Education. Design mockup — not
-            yet published.
+            © 2026 Tyndale University, School of Education. All rights
+            reserved.
           </p>
           <p>Built for Teacher Candidates</p>
         </div>
