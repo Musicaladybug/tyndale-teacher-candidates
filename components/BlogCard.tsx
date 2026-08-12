@@ -1,3 +1,5 @@
+import { withBase } from "@/lib/basePath";
+
 export type BlogCardProps = {
   /** CSS gradient string for the thumbnail banner. */
   gradient: string;
@@ -19,7 +21,7 @@ export default function BlogCard({
 }: BlogCardProps) {
   return (
     <a
-      href={href}
+      href={withBase(href)}
       className={`group flex h-full flex-col overflow-hidden rounded-card border-t-4 bg-white shadow-card transition hover:shadow-card-hover ${topBorder}`}
     >
       <div

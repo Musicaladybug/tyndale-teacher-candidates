@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { getAllSlugs, getPost, formatDate } from "@/lib/posts";
+import { withBase } from "@/lib/basePath";
 
 type Params = { slug: string };
 
@@ -42,7 +43,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
       <main id="main" className="bg-cream py-16 tc:py-24">
         <article className="container-content max-w-3xl">
           <a
-            href="/blog"
+            href={withBase("/blog")}
             className="text-sm font-bold text-navy hover:text-red hover:underline"
           >
             ← Back to blog

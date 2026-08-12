@@ -3,6 +3,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ContactCard from "@/components/ContactCard";
 import { CONTACTS } from "@/lib/contacts";
+import { withBase } from "@/lib/basePath";
 
 export const metadata: Metadata = {
   title: "Who to Contact — Teacher Candidates, Tyndale University",
@@ -34,7 +35,7 @@ export default function WhoToContactPage() {
               </h1>
             </div>
             <a
-              href="/who-to-contact/print"
+              href={withBase("/who-to-contact/print")}
               className="mt-2 inline-flex items-center gap-2 rounded-btn border-2 border-navy px-4 py-2 text-sm font-bold text-navy transition hover:bg-navy hover:text-white"
             >
               🖨 Printable version →

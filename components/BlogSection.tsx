@@ -1,5 +1,6 @@
 import BlogCard from "./BlogCard";
 import { getSortedPostsMeta, formatDate } from "@/lib/posts";
+import { withBase } from "@/lib/basePath";
 
 // Cycling visual accents so cards keep varied gradients/borders regardless of count.
 const ACCENTS = [
@@ -28,7 +29,7 @@ export default function BlogSection() {
             </p>
           </div>
           <a
-            href="/blog"
+            href={withBase("/blog")}
             className="text-sm font-bold text-navy hover:text-red hover:underline"
           >
             Visit the full blog →

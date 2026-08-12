@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import AutoPrint from "@/components/AutoPrint";
 import PrintButton from "@/components/PrintButton";
 import { CONTACTS } from "@/lib/contacts";
+import { withBase } from "@/lib/basePath";
 
 export const metadata: Metadata = {
   title: "Who to Contact — School of Education",
@@ -15,7 +16,7 @@ export default function WhoToContactPrintPage() {
       {/* Screen-only toolbar — hidden when printing */}
       <div className="mb-8 flex items-center justify-between print:hidden">
         <a
-          href="/who-to-contact"
+          href={withBase("/who-to-contact")}
           className="text-sm font-bold text-navy hover:text-red hover:underline"
         >
           ← Back to Who to Contact

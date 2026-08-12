@@ -1,3 +1,5 @@
+import { withBase } from "@/lib/basePath";
+
 type FooterColumn = {
   heading: string;
   headingColor: string;
@@ -9,9 +11,9 @@ const COLUMNS: FooterColumn[] = [
     heading: "Teacher Candidates",
     headingColor: "text-gold",
     links: [
-      { label: "Blog", href: "#blog" },
-      { label: "Key Links", href: "#key-links" },
-      { label: "Instagram", href: "#social" },
+      { label: "Blog", href: "/#blog" },
+      { label: "Key Links", href: "/#key-links" },
+      { label: "Instagram", href: "/#social" },
     ],
   },
   {
@@ -68,7 +70,7 @@ export default function SiteFooter() {
                 {col.links.map((link) => (
                   <li key={link.label}>
                     <a
-                      href={link.href}
+                      href={withBase(link.href)}
                       className="text-sm text-white/75 transition-colors hover:text-white hover:underline"
                       {...(link.external
                         ? { target: "_blank", rel: "noopener noreferrer" }

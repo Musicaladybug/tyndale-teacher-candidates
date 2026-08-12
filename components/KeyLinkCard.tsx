@@ -1,3 +1,5 @@
+import { withBase } from "@/lib/basePath";
+
 export type AccentColor = "gold" | "red" | "teal" | "green" | "orange" | "navy";
 
 export type MiniLink = { label: string; href: string };
@@ -87,7 +89,7 @@ export default function KeyLinkCard({
           {miniLinks.map((ml) => (
             <li key={ml.label}>
               <a
-                href={ml.href}
+                href={withBase(ml.href)}
                 className={`text-sm font-semibold hover:underline ${c.link}`}
               >
                 {ml.label}
@@ -97,7 +99,7 @@ export default function KeyLinkCard({
         </ul>
       ) : linkText ? (
         <a
-          href={href}
+          href={withBase(href)}
           className={`mt-4 inline-block text-sm font-bold hover:underline ${c.link}`}
         >
           {linkText}

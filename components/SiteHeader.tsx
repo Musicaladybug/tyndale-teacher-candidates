@@ -1,3 +1,5 @@
+import { withBase } from "@/lib/basePath";
+
 const NAV_LINKS = [
   { label: "Blog", href: "/#blog" },
   { label: "Key Links", href: "/#key-links" },
@@ -20,7 +22,7 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 bg-white shadow-[0_2px_8px_rgba(34,17,85,0.06)] print:hidden">
       <div className="container-content flex flex-wrap items-center justify-between gap-x-6 gap-y-4 py-4">
         {/* Text-only wordmark lockup — no crest/logo image */}
-        <a href="/" className="block shrink-0 leading-none">
+        <a href={withBase("/")} className="block shrink-0 leading-none">
           <span className="block text-[1.3rem] font-bold text-navy">
             Teacher Candidates
           </span>
@@ -34,7 +36,7 @@ export default function SiteHeader() {
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
-                  href={link.href}
+                  href={withBase(link.href)}
                   className="group relative inline-block py-1 text-[0.95rem] font-semibold text-navy transition-colors hover:text-red"
                 >
                   {link.label}

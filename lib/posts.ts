@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import { BASE_PATH } from "./basePath";
 
 const POSTS_DIR = path.join(process.cwd(), "content", "blog");
 
@@ -74,6 +75,11 @@ export async function getPost(slug: string): Promise<Post | null> {
   const raw = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(raw);
   const processed = await remark().use(html).process(content);
+  // Prefix root-relative links (e.g. /who-to-contact) with the base path so
+  // in-post links work when the site is served from a subfolder.
+  const contentHtml = BASE_PATH
+    ? processed.toString().replace(/href="\//g, `href="${BASE_PATH}/`)
+    : processed.toString();
 
   return {
     slug,
@@ -81,6 +87,6 @@ export async function getPost(slug: string): Promise<Post | null> {
     date: String(data.date ?? ""),
     excerpt: String(data.excerpt ?? ""),
     author: data.author ? String(data.author) : undefined,
-    contentHtml: processed.toString(),
+    contentHtml,
   };
 }
