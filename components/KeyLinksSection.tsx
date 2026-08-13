@@ -8,7 +8,7 @@ const CARDS: KeyLinkCardProps[] = [
     description:
       "Share photos of yourself and your learning to be featured on the School of Ed Closed Circuit TV on campus.",
     linkText: "Submit a photo →",
-    href: "#",
+    href: "https://sites.google.com/betyndale.ca/tcsontv/home",
   },
   {
     accent: "red",
@@ -17,7 +17,7 @@ const CARDS: KeyLinkCardProps[] = [
     description:
       "A confidential place to report discrimination or harm.",
     linkText: "Report or learn more →",
-    href: "#",
+    href: "https://youwillbeheard.netlify.app/",
     variant: "urgent",
   },
   {

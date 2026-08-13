@@ -101,6 +101,9 @@ export default function KeyLinkCard({
         <a
           href={withBase(href)}
           className={`mt-4 inline-block text-sm font-bold hover:underline ${c.link}`}
+          {...(/^https?:\/\//.test(href)
+            ? { target: "_blank", rel: "noopener noreferrer" }
+            : {})}
         >
           {linkText}
         </a>

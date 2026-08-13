@@ -20,9 +20,17 @@ const COLUMNS: FooterColumn[] = [
     heading: "Support",
     headingColor: "text-teal",
     links: [
-      { label: "You Will Be Heard", href: "#" },
+      {
+        label: "You Will Be Heard",
+        href: "https://youwillbeheard.netlify.app/",
+        external: true,
+      },
       { label: "Wellness Resources", href: "#" },
-      { label: "TCs on TV Submissions", href: "#" },
+      {
+        label: "TCs on TV Submissions",
+        href: "https://sites.google.com/betyndale.ca/tcsontv/home",
+        external: true,
+      },
     ],
   },
   {
